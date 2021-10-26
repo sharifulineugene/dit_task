@@ -11,7 +11,6 @@ import java.util.Scanner;
 public class PersonScanner implements Closeable {
     private Scanner scanner;
 
-    public PersonScanner(){}
     public PersonScanner(InputStream stream) {
         scanner = new Scanner(stream);
     }
@@ -20,13 +19,6 @@ public class PersonScanner implements Closeable {
         this.scanner = scanner;
     }
 
-    public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
-    }
-
-    public void setInputStream(InputStream stream) {
-        scanner = new Scanner(stream);
-    }
 
     public Person getPerson() {
         System.out.println("Insert first_name: ");
