@@ -33,7 +33,7 @@ public class Person {
     }
 
     public String toString() {
-        return "{firstName = "+this.firstName+"; lastName = "+this.lastName+"}";
+        return "{ firstName: \""+this.firstName+"\", lastName: \""+this.lastName+"\" }";
     }
 
     @Override
