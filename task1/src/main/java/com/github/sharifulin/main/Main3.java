@@ -10,11 +10,9 @@ public class Main3 {
     public static void main(String[] args) {
         try(PersonScanner personScanner = new PersonScanner(System.in)) {
             List<Person> persons = personScanner.getPersons();
-            Comparator<Person> comparator = (Person first, Person second) -> {
-                return !first.getLastName().equals(second.getLastName())
-                        ? first.getLastName().compareTo(second.getLastName())
-                        : first.getFirstName().compareTo(second.getFirstName());
-            };
+            Comparator<Person> comparator = (Person first, Person second) -> !first.getLastName().equals(second.getLastName())
+                    ? first.getLastName().compareTo(second.getLastName())
+                    : first.getFirstName().compareTo(second.getFirstName());
             persons.stream().sorted(comparator).forEach(System.out::println);
         }
     }

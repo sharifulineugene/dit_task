@@ -16,7 +16,11 @@ public class Main4 {
         int code = 0;
         while(code != 3) {
             System.out.println("Menu:\n1.Add\n2.Show\n3.Exit");
-            code = sc.nextInt();
+            try{
+                code = Integer.parseInt(sc.nextLine());
+            } catch(Exception ex) {
+                code = 0;
+            }
             switch(code) {
                 case 1: {
                     persons.add(personScanner.getPerson());
