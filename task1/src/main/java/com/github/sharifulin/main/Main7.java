@@ -3,10 +3,7 @@ package com.github.sharifulin.main;
 import com.github.sharifulin.entity.Person;
 import com.github.sharifulin.utils.PersonFileReader;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main7 {
     public static void main(String[] args) {
@@ -21,16 +18,9 @@ public class Main7 {
             pfr.close();
         };
         menuItems.addAll(Arrays.asList(new MenuItem("Read from file",readFromFile)
-                , new MenuItem("Clear data in memory", data->data.clear())
-                ,new MenuItem("Exit", data->System.exit(0))));
+                , new MenuItem("Clear data in memory", data->data.clear())));
         menu.setItems(menuItems);
-        int number = 0;
-        while(number != 3) {
-            menu.showMenu();
-            number = Integer.parseInt(scanner.nextLine());
-            menu.execMenuItem(number, personList);
-            System.out.println(personList);
-        }
+        menu.showMenu(personList);
         scanner.close();
     }
     private interface Exec {
@@ -44,6 +34,7 @@ public class Main7 {
             this.name = name;
             this.exec = exec;
         }
+
 
         public String toString(){
             return name;
@@ -59,15 +50,25 @@ public class Main7 {
         private Menu(Scanner scanner) {
             this.scanner = scanner;
         }
-        private void showMenu() {
-            int count = 1;
-            for(MenuItem menuItem: items) {
-                System.out.println("" + count++ +". " + menuItem);
+        private void showMenu(List<Person> personList) {
+            items.add(new MenuItem("Exit", data->System.exit(0)));
+            int number = 0;
+            MenuItem current = items.get(number);
+            while(!current.name.equals("Exit")) {
+                int count = 1;
+                for(MenuItem menuItem: items) {
+                    System.out.println("" + count++ +". " + menuItem);
+                }
+                number = Integer.parseInt(scanner.nextLine())-1;
+                current = items.get(number);
+                execMenuItem(number, personList);
+                System.out.println(personList);
             }
+
         }
         private void execMenuItem(int number, List<Person> list) {
             try {
-                items.get(number-1).exec.exec(list);
+                items.get(number).exec.exec(list);
             } catch (Exception e) {
                 e.printStackTrace();
             }
