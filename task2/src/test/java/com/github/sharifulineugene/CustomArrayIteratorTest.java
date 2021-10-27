@@ -12,7 +12,7 @@ public class CustomArrayIteratorTest {
     @Test
     public void shouldReturnList() {
         String[][] arr = new String[][]{{"1","2","3"},{"4","5","6"},{"String", "fedfe", "vfdvdvdvd"}};
-        List<String> expected = new ArrayList<>(Arrays.asList(new String[]{"1","2","3", "4","5","6", "String", "fedfe", "vfdvdvdvd"}));
+        List<String> expected = new ArrayList<>(Arrays.asList("1","2","3", "4","5","6", "String", "fedfe", "vfdvdvdvd"));
         List<String> actual = new ArrayList<>();
         CustomArrayIterator<String> it = new CustomArrayIterator<>(arr);
         while(it.hasNext()) {
