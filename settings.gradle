@@ -1,3 +1,4 @@
 rootProject.name = 'sharifulin-evgeniy'
 include 'task1'
+include 'task2'
 
