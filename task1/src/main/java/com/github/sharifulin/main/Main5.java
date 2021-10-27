@@ -43,6 +43,7 @@ public class Main5 {
                             return false;
                     }
                     ).forEach(System.out::println);
+                    break;
 
                 }
                 case 4: {
