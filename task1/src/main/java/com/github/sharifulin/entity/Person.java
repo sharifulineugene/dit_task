@@ -53,7 +53,7 @@ public class Person {
         private String firstName;
         private String lastName;
         private PersonBuilder() {}
-        public PersonBuilder fistName(String firstname) {
+        public PersonBuilder firstName(String firstname) {
             this.firstName = firstname;
             return this;
         }

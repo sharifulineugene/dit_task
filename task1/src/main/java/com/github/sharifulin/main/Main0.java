@@ -6,7 +6,7 @@ public class Main0 {
     public static void main(String[] args) {
         Person person = null;
         if(args.length == 2) {
-            person = Person.builder().fistName(args[0]).lastName(args[1]).build();
+            person = Person.builder().firstName(args[0]).lastName(args[1]).build();
         }
         if(person != null)
             System.out.println(person);

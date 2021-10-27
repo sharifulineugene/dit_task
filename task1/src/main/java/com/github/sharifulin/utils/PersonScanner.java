@@ -25,7 +25,7 @@ public class PersonScanner implements Closeable {
         String firstName = scanner.nextLine();
         System.out.println("Insert last_name: ");
         String lastName = scanner.nextLine();
-        return Person.builder().fistName(firstName).lastName(lastName).build();
+        return Person.builder().firstName(firstName).lastName(lastName).build();
     }
 
     public List<Person> getPersons() {

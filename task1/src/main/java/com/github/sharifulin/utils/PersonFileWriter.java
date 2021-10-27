@@ -2,7 +2,6 @@ package com.github.sharifulin.utils;
 
 import com.github.sharifulin.entity.Person;
 
-import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.FileWriter;
 import java.io.IOException;
