@@ -44,6 +44,7 @@ public class Main6 {
                             return false;
                     }
                     ).forEach(System.out::println);
+                    break;
 
                 }
                 case 4: {
@@ -52,6 +53,7 @@ public class Main6 {
                     try(PersonFileWriter pfw = new PersonFileWriter(path)) {
                         persons.stream().forEach(pfw::write);
                     }
+                    break;
                 }
                 case 5: {
                     break;
