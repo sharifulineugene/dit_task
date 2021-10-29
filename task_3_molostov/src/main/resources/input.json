@@ -1,0 +1,16 @@
+{
+  "factures":[
+    {
+      "account": "account1",
+      "balance": "1.29324"
+    },
+    {
+      "account": "account2",
+      "balance": "131.132"
+    },
+    {
+      "account": "account3",
+      "balance": "21231.032"
+    }
+  ]
+}
